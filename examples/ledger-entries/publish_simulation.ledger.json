@@ -1,0 +1,20 @@
+{
+  "entry_id": "led_publish_0001",
+  "timestamp": "2026-02-04T16:00:03Z",
+  "environment": "sandbox",
+  "actor_identity": "simulation_reference",
+  "intent_summary": "Publish a public post about authority governance (simulation only).",
+  "action_class": "publish",
+  "target": "public_web_post",
+  "surface": "external",
+  "data_sensitivity": "confidential",
+  "taxonomy_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "rule_path": "rules[action_class=publish]",
+  "decision": "simulate",
+  "proof_refs": [
+    { "type": "simulation", "ref": "simulation-only" },
+    { "type": "auditability", "ref": "ledger-entry-present" }
+  ],
+  "notes": "Non-normative example ledger entry."
+}
