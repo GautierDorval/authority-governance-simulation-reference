@@ -1,0 +1,9 @@
+{
+  "decision_id": "dec_delete_0001",
+  "timestamp": "2026-02-04T16:05:02Z",
+  "request_id": "req_delete_0001",
+  "decision": "deny",
+  "rule_path": "rules[action_class=delete]",
+  "requirements": ["ledger", "identity", "proof_reversibility", "human_oversight", "two_person_rule"],
+  "notes": "Delete is denied by default; irreversibility gate."
+}
