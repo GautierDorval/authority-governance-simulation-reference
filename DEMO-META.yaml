@@ -1,0 +1,12 @@
+demo_version: "2026-02-v1"
+illustrates_manifest: "v1.1.0"
+covers_layers: [3]
+covers_ops_pack: ["H-layer", "P-layer", "V-layer", "S-layer", "IR-layer"]
+mode: "simulation-only"
+scenarios:
+  - content_publishing
+  - data_deletion
+  - financial_transaction
+notes:
+  - "Non-normative reference only."
+  - "No executable orchestration code."
