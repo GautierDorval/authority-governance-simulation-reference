@@ -1,0 +1,11 @@
+{
+  "request_id": "req_publish_0001",
+  "timestamp": "2026-02-04T16:00:00Z",
+  "environment": "sandbox",
+  "intent_summary": "Publish a public post about authority governance (simulation only).",
+  "target": "public_web_post",
+  "requested_mode": "simulate",
+  "action_class_hint": "publish",
+  "data_sensitivity_hint": "confidential",
+  "notes": "Demonstration request; no execution."
+}
