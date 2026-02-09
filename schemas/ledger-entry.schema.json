@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/ledger-entry.schema.json",
+  "title": "Authority ledger entry (simulation reference)",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["entry_id", "timestamp", "environment", "intent_summary", "action_class", "target", "decision", "rule_path", "proof_refs"],
+  "properties": {
+    "entry_id": { "type": "string", "minLength": 6 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "environment": { "type": "string", "enum": ["sandbox", "staging", "production"] },
+    "intent_summary": { "type": "string", "minLength": 1 },
+    "action_class": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "target": { "type": "string", "minLength": 1 },
+    "decision": { "type": "string", "enum": ["allow", "deny", "escalate", "simulate", "rollback"] },
+    "rule_path": { "type": "string", "minLength": 1 },
+    "proof_refs": { "type": "array", "minItems": 1 }
+  }
+}
