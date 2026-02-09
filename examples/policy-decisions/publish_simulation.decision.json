@@ -1,0 +1,9 @@
+{
+  "decision_id": "dec_publish_0001",
+  "timestamp": "2026-02-04T16:00:02Z",
+  "request_id": "req_publish_0001",
+  "decision": "simulate",
+  "rule_path": "rules[action_class=publish]",
+  "requirements": ["ledger", "identity", "proof_reversibility", "human_oversight"],
+  "notes": "Publish is simulation-only in this reference."
+}
