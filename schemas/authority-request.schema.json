@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/authority-request.schema.json",
+  "title": "Authority request (simulation reference)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "timestamp", "environment", "intent_summary", "target", "requested_mode"],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 6 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "environment": { "type": "string", "enum": ["sandbox", "staging", "production"] },
+    "intent_summary": { "type": "string", "minLength": 1 },
+    "target": { "type": "string", "minLength": 1 },
+    "requested_mode": { "type": "string", "enum": ["execute", "simulate"] },
+    "action_class_hint": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "data_sensitivity_hint": { "type": "string", "enum": ["none", "confidential", "pii", "secret"] },
+    "notes": { "type": "string" }
+  }
+}
