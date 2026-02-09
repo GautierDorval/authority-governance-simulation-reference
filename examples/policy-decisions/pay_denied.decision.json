@@ -1,0 +1,9 @@
+{
+  "decision_id": "dec_pay_0001",
+  "timestamp": "2026-02-04T16:10:02Z",
+  "request_id": "req_pay_0001",
+  "decision": "deny",
+  "rule_path": "rules[action_class=pay]",
+  "requirements": ["ledger", "identity", "human_oversight", "two_person_rule"],
+  "notes": "Pay is denied by default; requires explicit human approvals."
+}
