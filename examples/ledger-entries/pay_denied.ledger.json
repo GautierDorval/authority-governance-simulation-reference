@@ -1,0 +1,19 @@
+{
+  "entry_id": "led_pay_0001",
+  "timestamp": "2026-02-04T16:10:03Z",
+  "environment": "sandbox",
+  "actor_identity": "simulation_reference",
+  "intent_summary": "Process a payment (simulation request).",
+  "action_class": "pay",
+  "target": "payment:invoice_7788",
+  "surface": "external",
+  "data_sensitivity": "secret",
+  "taxonomy_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "rule_path": "rules[action_class=pay]",
+  "decision": "deny",
+  "proof_refs": [
+    { "type": "auditability", "ref": "ledger-entry-present" }
+  ],
+  "notes": "Payment denied without explicit human approvals."
+}
