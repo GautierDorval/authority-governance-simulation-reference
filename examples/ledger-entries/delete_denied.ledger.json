@@ -1,0 +1,19 @@
+{
+  "entry_id": "led_delete_0001",
+  "timestamp": "2026-02-04T16:05:03Z",
+  "environment": "sandbox",
+  "actor_identity": "simulation_reference",
+  "intent_summary": "Delete an existing record (simulation request).",
+  "action_class": "delete",
+  "target": "crm_record:12345",
+  "surface": "external",
+  "data_sensitivity": "confidential",
+  "taxonomy_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "rule_path": "rules[action_class=delete]",
+  "decision": "deny",
+  "proof_refs": [
+    { "type": "auditability", "ref": "ledger-entry-present" }
+  ],
+  "notes": "Delete denied by default in the normative policy."
+}
