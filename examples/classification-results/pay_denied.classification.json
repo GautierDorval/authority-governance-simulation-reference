@@ -1,0 +1,11 @@
+{
+  "classification_id": "cls_pay_0001",
+  "timestamp": "2026-02-04T16:10:01Z",
+  "request_id": "req_pay_0001",
+  "action_class": "pay",
+  "surface": "external",
+  "criticality": "critical",
+  "data_sensitivity": "secret",
+  "reversibility_class": "compensable",
+  "notes": "Payments are critical; reversibility may exist via compensation, not rollback."
+}

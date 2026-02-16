@@ -4,6 +4,12 @@
   "request_id": "req_publish_0001",
   "decision": "simulate",
   "rule_path": "rules[action_class=publish]",
-  "requirements": ["ledger", "identity", "proof_reversibility", "human_oversight"],
-  "notes": "Publish is simulation-only in this reference."
+  "requirements": [
+    "ledger",
+    "identity",
+    "proof_reversibility",
+    "human_oversight"
+  ],
+  "notes": "Publish is simulation-only in this reference.",
+  "classification_id": "cls_publish_0001"
 }

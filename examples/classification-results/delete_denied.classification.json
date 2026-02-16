@@ -1,0 +1,11 @@
+{
+  "classification_id": "cls_delete_0001",
+  "timestamp": "2026-02-04T16:05:01Z",
+  "request_id": "req_delete_0001",
+  "action_class": "delete",
+  "surface": "internal",
+  "criticality": "high",
+  "data_sensitivity": "confidential",
+  "reversibility_class": "irreversible",
+  "notes": "Deletion is treated as high risk and irreversible by default."
+}

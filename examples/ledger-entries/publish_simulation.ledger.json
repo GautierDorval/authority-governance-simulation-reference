@@ -13,8 +13,17 @@
   "rule_path": "rules[action_class=publish]",
   "decision": "simulate",
   "proof_refs": [
-    { "type": "simulation", "ref": "simulation-only" },
-    { "type": "auditability", "ref": "ledger-entry-present" }
+    {
+      "type": "simulation",
+      "ref": "simulation-only"
+    },
+    {
+      "type": "auditability",
+      "ref": "ledger-entry-present"
+    }
   ],
-  "notes": "Non-normative example ledger entry."
+  "notes": "Non-normative example ledger entry.",
+  "request_id": "req_publish_0001",
+  "decision_id": "dec_publish_0001",
+  "classification_id": "cls_publish_0001"
 }

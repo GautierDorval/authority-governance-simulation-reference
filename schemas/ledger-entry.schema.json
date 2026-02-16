@@ -1,19 +1,138 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/schemas/ledger-entry.schema.json",
+  "$id": "https://raw.githubusercontent.com/GautierDorval/authority-governance-simulation-reference/v2026-02-demo-v2/schemas/ledger-entry.schema.json",
   "title": "Authority ledger entry (simulation reference)",
   "type": "object",
-  "additionalProperties": true,
-  "required": ["entry_id", "timestamp", "environment", "intent_summary", "action_class", "target", "decision", "rule_path", "proof_refs"],
+  "additionalProperties": false,
+  "required": [
+    "entry_id",
+    "timestamp",
+    "environment",
+    "intent_summary",
+    "action_class",
+    "target",
+    "decision",
+    "rule_path",
+    "proof_refs",
+    "request_id",
+    "decision_id",
+    "actor_identity",
+    "surface",
+    "data_sensitivity",
+    "taxonomy_version",
+    "policy_version"
+  ],
   "properties": {
-    "entry_id": { "type": "string", "minLength": 6 },
-    "timestamp": { "type": "string", "format": "date-time" },
-    "environment": { "type": "string", "enum": ["sandbox", "staging", "production"] },
-    "intent_summary": { "type": "string", "minLength": 1 },
-    "action_class": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-    "target": { "type": "string", "minLength": 1 },
-    "decision": { "type": "string", "enum": ["allow", "deny", "escalate", "simulate", "rollback"] },
-    "rule_path": { "type": "string", "minLength": 1 },
-    "proof_refs": { "type": "array", "minItems": 1 }
+    "entry_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "staging",
+        "production"
+      ]
+    },
+    "intent_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action_class": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny",
+        "escalate",
+        "simulate",
+        "rollback"
+      ]
+    },
+    "rule_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proof_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "ref"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hash": {
+            "type": "string",
+            "minLength": 8
+          }
+        }
+      }
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "classification_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "actor_identity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "surface": {
+      "type": "string",
+      "enum": [
+        "internal",
+        "external"
+      ]
+    },
+    "data_sensitivity": {
+      "type": "string",
+      "enum": [
+        "none",
+        "confidential",
+        "pii",
+        "secret"
+      ]
+    },
+    "taxonomy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
   }
 }

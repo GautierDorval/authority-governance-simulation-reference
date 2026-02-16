@@ -6,17 +6,24 @@ Evaluate authority policy rules against a classified request.
 
 ## Inputs
 
-- classified request (action_class + envelope)
-- authority policy (normative source)
+- `classification_result` (action_class + risk envelope)
+- authority policy (normative source in the manifest)
 
 ## Decision outputs
 
-- allow / deny / escalate / simulate
-- requirements list (human_oversight, ledger, identity, proof_reversibility, two_person_rule, etc.)
-- rule_path reference for traceability
+A `policy_decision` captures:
+
+- decision: `allow` / `deny` / `escalate` / `simulate`
+- `requirements`: list of required controls (ex.: `human_oversight`, `ledger`, `two_person_rule`)
+- `rule_path`: rule reference for traceability
+- linkage: `request_id` + `classification_id`
+
+Schema:
+- `schemas/policy-decision.schema.json`
 
 ## Conservative default
 
 If a rule is missing or proofs are absent:
-- deny or escalate
+- `deny` or `escalate`
 - never assume permissive execution
+

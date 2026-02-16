@@ -4,6 +4,12 @@
   "request_id": "req_pay_0001",
   "decision": "deny",
   "rule_path": "rules[action_class=pay]",
-  "requirements": ["ledger", "identity", "human_oversight", "two_person_rule"],
-  "notes": "Pay is denied by default; requires explicit human approvals."
+  "requirements": [
+    "ledger",
+    "identity",
+    "human_oversight",
+    "two_person_rule"
+  ],
+  "notes": "Pay is denied by default; requires explicit human approvals.",
+  "classification_id": "cls_pay_0001"
 }

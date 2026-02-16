@@ -1,0 +1,11 @@
+{
+  "classification_id": "cls_publish_0001",
+  "timestamp": "2026-02-04T16:00:01Z",
+  "request_id": "req_publish_0001",
+  "action_class": "publish",
+  "surface": "external",
+  "criticality": "medium",
+  "data_sensitivity": "confidential",
+  "reversibility_class": "reversible",
+  "notes": "Publishing is externally visible but reversible in this demo context."
+}

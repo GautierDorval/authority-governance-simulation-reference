@@ -13,7 +13,13 @@
   "rule_path": "rules[action_class=pay]",
   "decision": "deny",
   "proof_refs": [
-    { "type": "auditability", "ref": "ledger-entry-present" }
+    {
+      "type": "auditability",
+      "ref": "ledger-entry-present"
+    }
   ],
-  "notes": "Payment denied without explicit human approvals."
+  "notes": "Payment denied without explicit human approvals.",
+  "request_id": "req_pay_0001",
+  "decision_id": "dec_pay_0001",
+  "classification_id": "cls_pay_0001"
 }

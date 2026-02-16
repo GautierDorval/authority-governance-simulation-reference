@@ -1,8 +1,12 @@
-demo_version: "2026-02-v1"
-illustrates_manifest: "v1.1.0"
+demo_version: "v2026-02-demo-v2"
+illustrates_manifest: "v1.4.1"
 covers_layers: [3]
 covers_ops_pack: ["H-layer", "P-layer", "V-layer", "S-layer", "IR-layer"]
 mode: "simulation-only"
+related_references:
+  manifest_repo: "https://github.com/GautierDorval/interpretive-governance-manifest"
+  agentic_layer2_reference: "https://github.com/GautierDorval/interpretive-agentic-reference"
+  doctrine_repo: "https://github.com/GautierDorval/ssa-e-a2-doctrine"
 scenarios:
   - content_publishing
   - data_deletion
@@ -10,3 +14,4 @@ scenarios:
 notes:
   - "Non-normative reference only."
   - "No executable orchestration code."
+  - "Schema identifiers are pinned to the tag declared in VERSION for opposability."

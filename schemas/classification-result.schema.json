@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/GautierDorval/authority-governance-simulation-reference/v2026-02-demo-v2/schemas/classification-result.schema.json",
+  "title": "Classification result (simulation reference)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "classification_id",
+    "timestamp",
+    "request_id",
+    "action_class",
+    "surface",
+    "criticality",
+    "data_sensitivity",
+    "reversibility_class"
+  ],
+  "properties": {
+    "classification_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 6
+    },
+    "action_class": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "surface": {
+      "type": "string",
+      "enum": [
+        "internal",
+        "external"
+      ]
+    },
+    "criticality": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "data_sensitivity": {
+      "type": "string",
+      "enum": [
+        "none",
+        "confidential",
+        "pii",
+        "secret"
+      ]
+    },
+    "reversibility_class": {
+      "type": "string",
+      "enum": [
+        "reversible",
+        "compensable",
+        "irreversible"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

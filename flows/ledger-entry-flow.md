@@ -2,26 +2,35 @@
 
 ## Goal
 
-Record authority decisions in an audit-friendly entry.
+Record authority outcomes in an audit-friendly entry.
 
 ## Required records
 
-Ledger entries must exist for:
-- allow
-- deny
-- escalate
-- simulate
-- rollback (if applicable)
+Ledger entries should exist for:
+- `allow`
+- `deny`
+- `escalate`
+- `simulate`
+- `rollback` (if applicable)
 
-## Minimal fields (conceptual)
+## Minimal fields (simulation reference)
 
-- entry_id, timestamp, environment
-- actor_identity, principal_identity (optional)
-- intent_summary, action_class, target
-- taxonomy_version, policy_version, rule_path
-- decision
-- proof_refs (pointers only)
+A `ledger_entry` captures:
 
-## Notes
+- `entry_id`, `timestamp`, `environment`
+- linkage: `request_id` + `decision_id` (and optionally `classification_id`)
+- `actor_identity`
+- `intent_summary`, `action_class`, `target`
+- `surface`, `data_sensitivity`
+- `taxonomy_version`, `policy_version`, `rule_path`
+- `decision`
+- `proof_refs` (pointers only, never invented content)
+- `notes` (optional)
 
-This repository includes example ledger entries in `examples/ledger-entries/`.
+Schema:
+- `schemas/ledger-entry.schema.json`
+
+## Examples
+
+See `examples/ledger-entries/` for filled entries that link back to requests and decisions.
+
