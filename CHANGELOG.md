@@ -1,5 +1,15 @@
 # Changelog — authority-governance-simulation-reference
 
+## Unreleased
+
+- Added CI workflow (`.github/workflows/ci-validate.yml`) with push + PR triggers.
+- Fixed deprecated `jsonschema.RefResolver` usage in `validate_repo.py` (replaced with `referencing.Registry`).
+- Fixed incorrect type annotation in `validate_repo.py` (`Tuple[str, str, str, str]` → `Tuple[str, str, str, str, str]`).
+- Added `.gitignore`.
+- Added pinned `scripts/requirements.txt` (`jsonschema==4.23.0`, `referencing==0.35.1`).
+
+---
+
 ## v2026-02-demo-v2
 
 - Fixed schema identity: `$id` now points to this repository (pinned tag), not `example.org`.

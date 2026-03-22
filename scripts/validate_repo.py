@@ -16,9 +16,6 @@ from __future__ import annotations
 
 import json
 import sys
-import warnings
-
-warnings.filterwarnings('ignore', category=DeprecationWarning)
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,9 +23,17 @@ from typing import Dict, Any, List, Tuple
 
 try:
     import jsonschema  # type: ignore
+    from jsonschema import Draft202012Validator
 except Exception as e:  # pragma: no cover
     print("ERROR: jsonschema is required for validation. Install with: pip install jsonschema", file=sys.stderr)
     raise
+
+try:
+    from referencing import Registry, Resource  # type: ignore
+    from referencing.jsonschema import DRAFT202012  # type: ignore
+    _HAS_REFERENCING = True
+except ImportError:
+    _HAS_REFERENCING = False
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -66,10 +71,23 @@ def schema_store() -> Dict[str, Any]:
     return store
 
 
+def _build_registry(store: Dict[str, Any]) -> Any:
+    if not _HAS_REFERENCING:
+        return None
+    resources = []
+    for uri, schema in store.items():
+        resources.append((uri, Resource.from_contents(schema, default_specification=DRAFT202012)))
+    return Registry().with_resources(resources)
+
+
 def validate_example(example: Dict[str, Any], schema: Dict[str, Any], store: Dict[str, Any], path: Path) -> None:
-    resolver = jsonschema.RefResolver.from_schema(schema, store=store)  # deprecated but practical
     try:
-        jsonschema.validate(instance=example, schema=schema, resolver=resolver)
+        registry = _build_registry(store)
+        if registry is not None:
+            validator = Draft202012Validator(schema, registry=registry)
+            validator.validate(example)
+        else:
+            jsonschema.validate(instance=example, schema=schema)
     except jsonschema.ValidationError as e:
         raise RuntimeError(f"Schema validation failed for {path}:\n{e.message}") from e
 
@@ -89,7 +107,7 @@ def load_scenarios() -> List[ScenarioChain]:
     dec_dir = REPO_ROOT / "examples" / "policy-decisions"
     led_dir = REPO_ROOT / "examples" / "ledger-entries"
 
-    scenarios: List[Tuple[str, str, str, str]] = [
+    scenarios: List[Tuple[str, str, str, str, str]] = [
         ("publish_simulation", "publish_simulation.json", "publish_simulation.classification.json", "publish_simulation.decision.json", "publish_simulation.ledger.json"),
         ("delete_denied", "delete_denied.json", "delete_denied.classification.json", "delete_denied.decision.json", "delete_denied.ledger.json"),
         ("pay_denied", "pay_denied.json", "pay_denied.classification.json", "pay_denied.decision.json", "pay_denied.ledger.json"),
