@@ -7,6 +7,7 @@
 - Fixed incorrect type annotation in `validate_repo.py` (`Tuple[str, str, str, str]` → `Tuple[str, str, str, str, str]`).
 - Added `.gitignore`.
 - Added pinned `scripts/requirements.txt` (`jsonschema==4.23.0`, `referencing==0.35.1`).
+- Documented the relationship between simulated authority decisions and interpretive fidelity (`RELATIONSHIP.md`, `SCOPE.md`, `README.md`, `DEMO-META.yaml`): authorization and scope are distinct from fidelity, and simulation artifacts produce no semantic result. No schema, example, stub or version changed.
 
 ---
 

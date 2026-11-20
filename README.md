@@ -23,6 +23,7 @@ This repository does NOT:
 - include security hardening or production patterns
 - guarantee safety, compliance, or fitness for purpose
 - provide bypass or exploitation guidance
+- evaluate the meaning or fidelity of any answer (see `RELATIONSHIP.md`)
 
 Conformance to the standard is determined by the manifest, not by this reference.
 
