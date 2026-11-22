@@ -19,6 +19,7 @@
 - no CI/CD or deployment patterns (beyond minimal JSON validation)
 - no secrets or credentials
 - no bypass or exploitation guidance
+- no evaluation of meaning or fidelity: schemas, examples and ledger entries are simulation artifacts, and their presence or validation produces no semantic result
 
 ## Safety posture
 

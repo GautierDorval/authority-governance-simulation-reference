@@ -15,3 +15,4 @@ notes:
   - "Non-normative reference only."
   - "No executable orchestration code."
   - "Schema identifiers are pinned to the tag declared in VERSION for opposability."
+  - "Simulated authority decisions are not fidelity assessments; no semantic result is derived from these artifacts."
